@@ -1,4 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }

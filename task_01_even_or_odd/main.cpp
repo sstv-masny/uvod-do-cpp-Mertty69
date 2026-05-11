@@ -4,13 +4,14 @@ using namespace std;
 
 int main() {
     long long n;
-    if (!(std::cin >> n))
-        return 0;
+    cout << "Enter a number: ";
+    cin >> n;
+
     // TODO: print "even" or "odd"
     if (n % 2 == 0) {
-        cout << "odd";
-    } else {
         cout << "even";
+    } else {
+        cout << "odd";
     }
     return 0;
 }
