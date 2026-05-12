@@ -1,10 +1,13 @@
-
 #include <iostream>
+using namespace std;
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    long long y;
-    if (!(std::cin >> y)) return 0;
-    // TODO: implement leap rule and print YES/NO
+    int y;
+    cout << "Enter year: ";
+    cin >> y;
+
+    if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+        cout << y << " Yess" << endl;
+    } else
+        cout << y << " Nooo";
     return 0;
 }
