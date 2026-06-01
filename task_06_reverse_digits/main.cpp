@@ -1,10 +1,14 @@
-
 #include <iostream>
+using namespace std;
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    unsigned long long n;
-    if (!(std::cin >> n)) return 0;
-    // TODO: reverse using % and /, not strings
+
+    unsigned long n, reversed = 0;
+    cout << "Zadaj cislo: ";
+    cin >> n;
+    while (n > 0) {
+        reversed = reversed * 10 + n % 10;
+        n = n / 10;
+    }
+    cout << "obratene cislo: " << reversed << endl;
     return 0;
 }

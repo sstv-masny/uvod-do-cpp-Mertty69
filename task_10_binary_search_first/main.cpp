@@ -1,14 +1,37 @@
 
 #include <iostream>
 #include <vector>
+using namespace std;
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    int n; 
-    if (!(std::cin >> n)) return 0;
-    std::vector<long long> a(n);
-    for (int i=0;i<n;i++) std::cin >> a[i];
-    long long x; std::cin >> x;
-    // TODO: binary search for first index of x; print index or -1
+    vector<int> cisla;
+    int PocetCisel;
+    cout << "Zadejte pocet cisel: ";
+    cin >> PocetCisel;
+    cout << "Zadajte cisla: ";
+    for (int i = 0; i < PocetCisel; i++) {
+        int Cislo;
+        cin >> Cislo;
+        cisla.push_back(Cislo);
+    }
+    int HladaneCislo;
+    cout << "Zadajte hladane cislo: ";
+    cin >> HladaneCislo;
+
+    int lavy = 0;
+    int pravy = cisla.size() - 1;
+
+    while (lavy <= pravy) {
+        int stred = (lavy + pravy) / 2;
+        if (cisla[stred] == HladaneCislo) {
+            cout << "Nasiel sa na pozicii: " << stred;
+            return 0;
+        }
+        if (cisla[stred] < HladaneCislo) {
+            lavy = stred + 1;
+        } else {
+            pravy = stred - 1;
+        }
+    }
+    cout << "Cislo sa nenaslo.";
     return 0;
 }
