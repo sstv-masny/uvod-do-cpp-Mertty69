@@ -4,18 +4,23 @@
 using namespace std;
 
 int main() {
-    long k, fare;
+    float k, fare;
     // TODO: compute the fare as specified and print with two decimals
     cout << "Zadaj najazdene kilometre: ";
     cin >> k;
     float y = 0;
-
-    if (k <= 2) {
+    if (k<=0)
+    {
+        cout<<"Zla hodnota kilometrov!"<<endl;
+    }
+    else if (k <= 2) {
         fare = 4.00;
     } else if (k > 2) {
         y = ceil(k - 2);
-        fare = 4 + k * 1.5;
+        fare = 4 + y * 1.5;
     }
+    else { cout<<"ERROR 404!"<<endl;}
+    
     cout << "Kilometre: " << y << endl;
     cout << "Fare: " << fixed << setprecision(2) << fare << endl;
     return 0;
