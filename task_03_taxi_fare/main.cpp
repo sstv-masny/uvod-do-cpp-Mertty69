@@ -6,10 +6,9 @@ using namespace std;
 int main() {
     float k, fare;
     // TODO: compute the fare as specified and print with two decimals
-    cout << "Zadaj najazdene kilometre: ";
     cin >> k;
     float y = 0;
-    if (k<=0)
+    if (k<0)
     {
         cout<<"Zla hodnota kilometrov!"<<endl;
     }
@@ -21,7 +20,6 @@ int main() {
     }
     else { cout<<"ERROR 404!"<<endl;}
     
-    cout << "Kilometre: " << y << endl;
-    cout << "Fare: " << fixed << setprecision(2) << fare << endl;
+    cout << fixed << setprecision(2) << fare << endl;
     return 0;
 }

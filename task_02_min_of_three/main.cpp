@@ -4,7 +4,6 @@ using namespace std;
 int main() {
     int a, b, c;
     // TODO: print the minimum of a, b, c
-    cout << "Enter three numbers: ";
     cin >> a >> b >> c;
     int min = a;
     if (b < min) {
@@ -13,6 +12,6 @@ int main() {
     if (c < min) {
         min = c;
     }
-    cout << "min is: " << min;
+    cout << min;
     return 0;
 }

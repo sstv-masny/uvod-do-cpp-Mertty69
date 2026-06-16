@@ -3,8 +3,10 @@
 using namespace std;
 
 long long NSD(long long delenec, long long delitel) {
+    delenec = abs(delenec);
+    delitel = abs(delitel);
     while (delitel > 0) {
-        int zvysok = delenec % delitel;
+        long long zvysok = delenec % delitel;
         delenec = delitel;
         delitel = zvysok;
     }
@@ -12,12 +14,18 @@ long long NSD(long long delenec, long long delitel) {
 }
 int main() {
     long long delenec, delitel;
-    std::cout << "Zadaj delenec a delitel: ";
     std::cin >> delenec >> delitel;
     long long NSD_hodnota = NSD(delenec, delitel);
     long long a = delenec / NSD_hodnota;
     long long b = delitel / NSD_hodnota;
-    cout << a << "/" << b << endl;
-    cout << "NSD: " << NSD_hodnota << endl;
+    
+    // Ensure denominator is always positive
+    if (b < 0) {
+        a = -a;
+        b = -b;
+    }
+    
+    cout << a <<' '<< b << endl;
+    
     return 0;
 }

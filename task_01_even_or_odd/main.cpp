@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     long long n;
-    cout << "Enter a number: ";
     cin >> n;
 
     // TODO: print "even" or "odd"
